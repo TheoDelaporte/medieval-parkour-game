@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{9977AABB-27CC-2B74-E86C-F1253C3CCD3E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChestOpener.cs">
+    <Files>
+      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonController.cs" Line="11" Column="39" />
+      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonAnimator.cs" Line="32" Column="52" />
+      <File FileName="Assets/Scripts/Rotator.cs" Line="9" Column="33" />
+      <File FileName="Assets/Scripts/ChestOpener.cs" Line="18" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="medievalParkour" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Invector-3rdPersonController_LITE" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="CharacterController" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="ChestOpener.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92f35991-aaaf-4f2e-9755-b2bb7a56ee68" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
