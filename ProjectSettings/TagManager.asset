@@ -8,6 +8,9 @@ TagManager:
   - Coin
   - Chest
   - spike
+  - Axe
+  - Poison
+  - Fire
   layers:
   - Default
   - TransparentFX

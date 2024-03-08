@@ -15,9 +15,27 @@ namespace Invector.vCharacterController
         public GameObject loseTextObject; // Référence au texte affichant la fin de la partie et la défaite
         public GameObject livesTextObject;
         public GameObject countTextObject;
-        private bool hitByArrow = false; // Variable pour indiquer si le personnage a déjà été touché par une flèche
+        private bool hit = false; // Variable pour indiquer si le personnage a déjà été touché par une flèche
         private int lives = 3; // Nombre de vies initial du personnage
         private bool isInvulnerable = false; // Indique si le personnage est invulnérable après avoir été touché par une flèche
+        public AudioClip LandingAudioClip;
+        private CharacterController _controller;
+        public AudioClip[] FootstepAudioClips;
+        [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+
+        [System.Obsolete]
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.LoadLevel("Main Menu");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Application.LoadLevel("playground");
+            }
+        }
 
         void Start()
         {
@@ -104,6 +122,18 @@ namespace Invector.vCharacterController
             }
         }
 
+        private void OnFootstep(AnimationEvent animationEvent)
+        {
+            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            {
+                if (FootstepAudioClips.Length > 0)
+                {
+                    var index = Random.Range(0, FootstepAudioClips.Length);
+                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                }
+            }
+        }
+
         // Gère la course
         public virtual void Sprint(bool value)
         {
@@ -171,7 +201,13 @@ namespace Invector.vCharacterController
                 numberOfCoins = numberOfCoins + 3; // Augmente le nombre de pièces collectées
                 SetCountText(); // Met à jour le texte affichant le nombre de pièces
             }
-            else if (other.gameObject.CompareTag("spike") && !hitByArrow && !isInvulnerable) // Si le joueur entre en collision avec une flèche et n'a pas déjà été touché
+            else if (
+                other.gameObject.CompareTag("spike") ||
+                other.gameObject.CompareTag("Axe") ||
+                other.gameObject.CompareTag("Fire") ||
+                other.gameObject.CompareTag("Poison") &&
+                !hit && !isInvulnerable
+                ) // Si le joueur entre en collision avec une flèche et n'a pas déjà été touché
             {
                 //other.gameObject.SetActive(false); // Désactive la flèche
                 //hitByArrow = true; // Marque que le personnage a été touché par une flèche
@@ -203,24 +239,45 @@ namespace Invector.vCharacterController
             yield return new WaitForSeconds(4f); // 4 secondes se déroulent entre chaque perte de vie
 
             isInvulnerable = false; // Rend le personnage vulnérable à nouveau
-            hitByArrow = false; // Réinitialise la variable de collision de la flèche
+            hit = false; // Réinitialise la variable de collision de la flèche
         }
 
         // Met à jour le texte affichant le nombre de pièces collectées
         void SetCountText()
         {
-            countText.text = "Count: " + numberOfCoins.ToString();
+            countText.text = numberOfCoins.ToString();
 
             if (numberOfCoins >= 17)
             {
                 winTextObject.SetActive(true);
+                livesTextObject.SetActive(false);
+                countTextObject.SetActive(false);
+                CharacterController characterController = GetComponent<CharacterController>();
+            }
+        }
+
+        // Méthode pour désactiver les touches Z, Q, S, D
+        void DisablePlayerControls()
+        {
+            // Obtenez le composant CharacterController ou tout autre composant de mouvement du joueur
+            CharacterController characterController = GetComponent<CharacterController>();
+
+            // Désactivez la possibilité de mouvement du joueur
+            if (characterController != null)
+            {
+                characterController.enabled = false;
             }
         }
 
         // Méthode pour mettre à jour l'affichage du nombre de vies
         void SetLivesText()
         {
-            livesText.text = "Lives: " + lives.ToString();
+            livesText.text = "";
+            // Boucle pour générer des caractères de cœur
+            for (int i = 0; i < lives; i++)
+            {
+                livesText.text += "<3 "; // Ajoute un caractère de cœur pour chaque vie
+            }
         }
     }
 }

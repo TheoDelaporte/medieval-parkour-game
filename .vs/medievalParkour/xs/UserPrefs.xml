@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{9977AABB-27CC-2B74-E86C-F1253C3CCD3E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChestOpener.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
     <Files>
-      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonController.cs" Line="11" Column="39" />
-      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonAnimator.cs" Line="32" Column="52" />
-      <File FileName="Assets/Scripts/Rotator.cs" Line="9" Column="33" />
-      <File FileName="Assets/Scripts/ChestOpener.cs" Line="18" Column="1" />
+      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonController.cs" Line="22" Column="49" />
+      <File FileName="Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonAnimator.cs" Line="35" Column="1" />
+      <File FileName="Assets/Scripts/Rotator.cs" Line="13" Column="4" />
+      <File FileName="Assets/Scripts/ChestOpener.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="8" Column="4" />
+      <File FileName="Assets/Scripts/PlaygroundMenu.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +19,7 @@
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="ChestOpener.cs" selected="True" />
+                <Node name="MainMenu.cs" selected="True" />
               </Node>
             </Node>
           </Node>
