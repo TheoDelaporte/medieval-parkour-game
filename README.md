@@ -14,6 +14,7 @@ Medieval Parkour offre une expérience immersive en third-person dans un univers
 - **Collecte de trésors**: Ramassez des trésors dispersés dans le labyrinthe pour accumuler des points et débloquer de nouveaux défis.
 - **Animations**: Profitez d'animations dynamiques pour chaque action, renforçant l'immersion dans l'univers cartoon médiéval.
 - **Défis variés**: Affrontez une multitude de défis, des pièges, en passant par des trapes et bien plus encore.
+- **3 vies donc 3 chances de survivre au Medieval Parkour**: Pour vous faciliter la tâche, vous posséderez dans cette aventure plusieurs vies afin d'avoir une chance dès le début.
 - **Atmosphère médiévale**: Plongez dans une atmosphère médiévale charmante et colorée, avec des décors et des personnages cartoon.
 
 ## Comment jouer
